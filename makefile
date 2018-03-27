@@ -1,13 +1,13 @@
 #HEADERS = Book.h Enums.h OrderEvents.h Order.h
 
-default: HCTechHomework
+default: main
 
-HCTechHomework.o: HCTechHomework.cpp $(HEADERS)
-	g++ -O3 -g0 -Wall -c -fmessage-length=0 -MMD -MP -L/usr/local/lib -std=c++11 -o HCTechHomework.o  HCTechHomework.cpp
+main.o: main.cpp $(HEADERS)
+	g++ -O3 -g0 -Wall -c -fmessage-length=0 -MMD -MP -L/usr/local/lib -std=c++11 -o main.o  main.cpp
 
-HCTechHomework: HCTechHomework.o
-	g++ HCTechHomework.o -o HCTechHomework -lboost_unit_test_framework 
+main: main.o
+	g++ main.o -o main -lboost_unit_test_framework 
 
 clean:
-	-rm -f HCTechHomework.o
-	-rm -f HCTechHomework
+	-rm -f main.o
+	-rm -f main
